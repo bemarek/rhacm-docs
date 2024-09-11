@@ -274,6 +274,8 @@ __optional__|CSpecify the list of the IP address pools for machines.|array
 __optional__|Specify the Container Network Interface (CNI) plugin to install. The default value is `OpenShiftSDN` for IPv4, and `OVNKubernetes` for IPv6 or {sno} clusters.|string
 |*proxy* +
 __optional__|Define the proxy settings used for the install configuration of the cluster.|object
+|*pruneManifests* +
+__optional__|Specify a list of cluster-level manifests to remove.|array
 |*pullSecretRef* +
 __required__|Configure the `pull-secret` file for pulling images.
 When creating the `pull-secret` file, use the same namespace as the `ClusterInstance` CR that provisions the host.|object
@@ -343,6 +345,8 @@ When you add a custom role, it can be associated with a custom machine config po
 Adding custom labels or roles during installation makes the deployment process more effective and prevents the need for additional reboots after the installation is complete.|object
 |*nodeNetwork* +
 __optional__|Configure the network settings for the node.|object
+|*pruneManifests* +
+__optional__|Specify a list of node-level manifests to remove.|array
 |*role* +
 __optional__|Configure the role of the node, such as `master` or `worker`.
 |string

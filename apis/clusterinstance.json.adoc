@@ -238,10 +238,6 @@ __required__|Specify the base domain used for the deployed cluster.|string
 |*caBundleRef* +
 __optional__|Reference the `ConfigMap` object that contains the new bundle of trusted certificates for the host.
 The `tls-ca-bundle.pem` entry in the `ConfigMap` object is written to `/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem`.|string
-|*clusterLabels* +
-__optional__|Configure cluster labels to correspond to the binding rules in the `PolicyGenerator` or `PolicyGenTemplate` CRs that you define.
-`PolicyGenerator` CRs use the `policyDefaults.placement.labelSelector` field.
-`PolicyGenTemplate` CRs use the `bindingRules` field.|object
 |*clusterName* +
 __required__|Specify the name of the cluster.|string
 |*clusterNetwork* +
@@ -261,6 +257,8 @@ The default value is `None`.|string
 __optional__|CEnable or disable disk encryption for the cluster.|object
 |*extraAnnotations* +
 __optional__|CSpecify additional cluster-level annotations to be applied to the rendered templates.|object
+|*extraLabels* +
+__optional__|Specify additional cluster-level labels that applies to the rendered templates.|object
 |*extraManifestsRefs* +
 __optional__|CSpecify the list of the `ConfigMap` object references that contain additional manifests to be applied to the cluster.|array
 |*holdInstallation* +
@@ -325,6 +323,8 @@ The following values are supported:
 * `legacy`|string
 |*extraAnnotations* +
 __optional__|Specify additional node-level annotations to be applied to the rendered templates.|object
+|*extraLabels* +
+__optional__|Specify additional node-level labels that applies to the rendered templates.|object
 |*hostName* +
 __required__|Define the host name.|string
 |*installerArgs* +
